@@ -217,7 +217,6 @@ client.on("interactionCreate", async (interaction) => {
     } else if(varmi.includes(interaction.user.id)) {
          
       db.unpush(`user_${interaction.message.id}`, interaction.user.id)
-      db.unpush(`user_${key2}`, interaction.user.id)
       interaction.reply({ content: `Başarıyla çekilişten ayrıldın!` , ephemeral: true })
       let katılımcı = db.get(`user_${interaction.message.id}`).length;
       let odul = data.odul

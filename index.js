@@ -5,7 +5,7 @@ const ravendb = require("raven.database");
 const db = require("croxydb")
 const ms = require("ms")
 const client = new Client({
-    intents: INTENTS,
+    intents: INTENT
     allowedMentions: {
         parse: ["users"]
     },
@@ -200,7 +200,7 @@ client.on("interactionCreate", async (interaction) => {
       let odul = data.odul
       let sure = data.ex
       let hosted = data.hosted
-      let key = data.giveawayID
+ 
       db.push(`user_${interaction.message.id}`, interaction.user.id)
       interaction.reply({content: "Başarıyla çekilişe katıldın!", ephemeral: true})
       let katılımcı = db.get(`user_${interaction.message.id}`).length;
@@ -215,7 +215,7 @@ client.on("interactionCreate", async (interaction) => {
       .setColor("Blurple")
       message.edit({embeds: [embed]})
     } else if(varmi.includes(interaction.user.id)) {
-            let key2 = data.giveawayID
+         
       db.unpush(`user_${interaction.message.id}`, interaction.user.id)
       db.unpush(`user_${key2}`, interaction.user.id)
       interaction.reply({ content: `Başarıyla çekilişten ayrıldın!` , ephemeral: true })
@@ -266,7 +266,7 @@ client.on("ready", async () => {
        if (data) {
          let time = Date.now() - data.zaman;
          let sure = data.sure;
-        let key = data.giveawayID
+
 let kanal = guild.channels.cache.get(data.kanalid);
 kanal.messages.fetch(data.mesajid).then(async mesaj => {
            })

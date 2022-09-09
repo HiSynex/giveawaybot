@@ -297,7 +297,7 @@ Katılımcı: **${katılımcı}**`)
             if(winner){
              db.set(`cekilis_${mesaj.id}`, data.odul);  
              db.delete(`cekilis_${channel.id}`);
-             db.delete(`cekilis_${key}`);
+            
              kanal.send(`Tebrikler <@${winner}> **${data.odul}** Kazandın!`)
            db.set(`son_${mesaj.id}`, true)
        

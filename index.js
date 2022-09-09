@@ -313,7 +313,7 @@ Düzenleyen: <@${data.hosted}>
 Kazanan: Bilinmiyor.
 Katılımcı: **0**`) 
 mesaj.edit({embeds: [embed], components: []})
-mesaj.reply("Bu çekilişte yeterli katılımcı bulunamadı!")
+
          
             }
                    })                                           

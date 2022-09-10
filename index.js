@@ -5,7 +5,7 @@ const ravendb = require("raven.database");
 const db = require("croxydb")
 const ms = require("ms")
 const client = new Client({
-    intents: INTENT,
+    intents: INTENTS,
     allowedMentions: {
         parse: ["users"]
     },
